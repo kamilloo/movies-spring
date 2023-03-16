@@ -54,16 +54,17 @@ class MovieControllerTests {
 				.director(director)
 				.genre(genre)
 				.released(released)
+				.userId(1L)
 				.build();
 		movieRepository.save(movie);
 
 		Gson content = new Gson();
 		Map<String, String> expected = new HashMap<String, String>();
-		expected.put("name", name);
-		expected.put("director", director);
-		expected.put("title", title);
-		expected.put("genre", genre);
-		expected.put("released", "2000-01-01");
+		expected.put("Name", name);
+		expected.put("Director", director);
+		expected.put("Title", title);
+		expected.put("Genre", genre);
+		expected.put("Released", "2000-01-01");
 
 		String payload = content.toJson(expected);
 

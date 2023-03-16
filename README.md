@@ -41,10 +41,10 @@ Decoding the auth token will give you access to basic information about the user
 
 ## //todo
 
-1. add user_id to movies table
+1. add user_id to movies table - done
 2. add integration with omdbapi
 3. create fake omdbapi service
 4. use environmental variable to control integration
-5. add authorized user jwt
+5. add authorized user jwt - 50%
 6. Limit monthly limit of creation movies
-7. Scope fetching movies list to authorized user
+7. Scope fetching movies list to authorized user - done
