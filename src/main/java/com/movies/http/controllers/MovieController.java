@@ -30,14 +30,14 @@ public class MovieController {
 
 
 
-    @GetMapping(value = "/movies", consumes = "application/json")
+    @GetMapping(value = "/movies")
     public ResponseEntity<List<MovieResponse>> index(@RequestAttribute User user){
         List<Movie> movies = movieRepository.findByUserId(user.getId());
         return ResponseEntity.ok(movies.stream().map(MovieResponse::new).collect(Collectors.toList()));
     }
 
 
-    @PostMapping(value = "/movies", consumes = "application/json")
+    @PostMapping(value = "/movies")
     @ResponseStatus(code = HttpStatus.CREATED)
     public ResponseEntity<MovieResponse> store(@RequestBody CreateMovieRequest request, @RequestAttribute User user)
     throws HttpClientErrorException.NotFound {
